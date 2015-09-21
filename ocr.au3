@@ -28,8 +28,6 @@ Sleep(1000)
 ;  White    = 12895428
 ;  Blue     = 5263532
 
-
-
 Local $TimerStart, $TimerDiff
 $TimerStart = TimerStart()
 
@@ -42,8 +40,6 @@ For $Scans = 1 to 2
    ; COORDINATES / PIXEL HERE:
    $Line = GetLines( 61, 43, 318, 139, $Pixel )
    
-   
-   
    For $LineNum = 1 to $Line[0][0]
       $Find = GetCharacters ( $Line[$LineNum][0], $Line[$LineNum][1], $Line[$LineNum][2], $Line[$LineNum][3], $Pixel )
    
@@ -54,13 +50,9 @@ For $Scans = 1 to 2
       For $i = 1 to $Find[0][0]
          ; Finds every pixel in the square
          $var = _GetAllPixels($Find[$i][0], $Find[$i][1], $Find[$i][2], $Find[$i][3], $Pixel )
-        
-         ; Dim'ing an array the size of the pixels found to record each value
-      ;   Dim $DistanceString[$Var[0][0]]
-        
+
          ; For every value, write the distance from StartX/StartY to
          ; FoundX/FoundY of each pixel
-      
          For $e = 1 to $Var[0][0]
             $distx = $Find[$i][0] - $Var[$e][0]
             $disty = $Find[$i][1] - $Var[$e][1]
@@ -93,7 +85,6 @@ For $Scans = 1 to 2
          ;EndIf
          
          ;FileWriteLine( $File, $String[$i] & "=" & $DistanceString[$i])
-         
          ;MsgBox("","", $String )
       Next
       
@@ -105,8 +96,8 @@ Next
 
 FileClose($File)
 
-$TimerDiff = TimerDiff ( $TimerStart )
-MsgBox( "", "", $TimerDiff )
+$TimerDiff = TimerDiff ($TimerStart)
+MsgBox("", "", $TimerDiff)
 
    ;===========================================================================
    ; Functions
