@@ -11,3 +11,18 @@ I noticed a pattern in the Diablo 2 font.
  3. The spacing between lines is at least 2 pixels
  
 Using this pattern I was able to find each line and each character, then make a unique ID from each character by mapping from the top-left most pixel and creating a pattern based on that. See the character definition file to see what the character mappings look like.
+
+
+## Usage
+
+Get all of the lines
+
+    $lines = GetLines($StartX, $StartY, $EndX, $EndY, $Color)
+
+Read the characters in each line
+
+    For $LineNum = 1 to $Line[0][0]
+        $Find = GetCharacters ( $Line[$LineNum][0], $Line[$LineNum][1], $Line[$LineNum][2], $Line[$LineNum][3], $Pixel )
+        ...
+    Next
+      
