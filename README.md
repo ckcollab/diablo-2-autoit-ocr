@@ -22,7 +22,7 @@ Get all of the lines
 Read the characters in each line
 
     For $LineNum = 1 to $Line[0][0]
-        $Find = GetCharacters ( $Line[$LineNum][0], $Line[$LineNum][1], $Line[$LineNum][2], $Line[$LineNum][3], $Pixel )
+        $Find = GetCharacters($Line[$LineNum][0], $Line[$LineNum][1], $Line[$LineNum][2], $Line[$LineNum][3], $Pixel)
         ...
     Next
       
